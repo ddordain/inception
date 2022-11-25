@@ -1,10 +1,9 @@
 #!/bin/bash
 
 if [ ! -d "/var/lib/mysql/wordpress_data" ]; then
-# echo "before dir does not exist"
 
 service mysql start
-sleep 1
+sleep 5
 
 mysql -u root <<END
 CREATE DATABASE $DB_NAME;
@@ -14,7 +13,7 @@ SET PASSWORD FOR 'root'@'localhost' = PASSWORD('$DB_PASS_ROOT');
 END
 
 service mysql stop 
-sleep 1
+sleep 5
 
 else
 echo "DB exits"
