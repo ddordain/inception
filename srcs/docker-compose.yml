@@ -27,7 +27,7 @@ services:
     networks:
       - localhost
     env_file: .env
-    image: 10.11.1
+    image: "10.11.1"
     restart: always
   
   wordpress:
@@ -41,7 +41,7 @@ services:
       - localhost
     restart: always
     env_file: .env
-    image: 6.1
+    image: "6.1"
   
   nginx:
     build: ./requirements/nginx
@@ -52,6 +52,6 @@ services:
     depends_on:
       - wordpress
     restart: always
-    image: 1.23
+    image: "1.23"
     networks:
       - localhost
