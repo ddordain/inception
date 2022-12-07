@@ -17,3 +17,5 @@ fclean:
 	docker network rm $$(docker network ls -q) || true
 
 re: fclean all
+
+.PHONY: all clean fclean re
